@@ -1,0 +1,86 @@
+<!-- ------------------------------------------------------ -->
+<%
+# ####          Nagłówek i info wstępne            #### #
+%>
+
+<h1>Hello#index</h1>
+<p>
+	 <b>(dopisz w adresie <i>/action/:id</i> lub <i>?stat=X</i>, aby zobaczyć wynik GET poniżej)</b>
+</p>
+<p>
+	Invoked action is: <b>'<%= @action %>'</b>,
+	param status is: <b>'<%= @status %>'</b><br/>
+	Current date is: <b><%= @time1.strftime('%A, %B %d, %Y') %></b>,
+	current time is: <b><%= @time1.strftime('%H:%M:%S') %></b><br/>
+	<% #Current seconds from <span style="color: #00ABA9;">1/1/1970</span> are: <%= @secs
+	%>
+</p>
+<% #<p>Find me in app/views/hello/index.html.erb</p>
+%>
+
+<!-- ------------------------------------------------------ -->
+
+<div class="well">
+	<h2>Zawartość tablicy {params}</h2>
+	<ul>
+		<% for elem in params %>
+		<li><%= elem %></li>
+		<% end %>
+	</ul>
+</div>
+
+<!-- ------------------------------------------------------ -->
+
+<%
+=begin
+<div class="well">
+	<h2>Zawartość tablicy {a}</h2>
+	<ul>
+		<% for elem in @a %
+		<li><%= elem %%</li>
+		<% end %
+	</ul>
+</div>
+=end
+%>
+
+<!-- ------------------------------------------------------ -->
+<%
+	# ####         Formularz testowy (logowanie)         #### #
+%>
+
+<form class="form-horizontal well" role="form">
+  <div class="form-group">
+    <label for="inputUsername" class="col-sm-4 control-label">Twój adres e-mail:</label>
+    <div class="col-sm-8">
+        <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="email" class="form-control" id="inputUsername" name="inputUsername" placeholder="Adres e-mail">
+        <span class="input-group-addon">.com</span>
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-4 control-label">Hasło logowania:</label>
+    <div class="col-sm-8">
+      <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Hasło">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="inputKeepAlive" name="inputKeepAlive"> Zapamiętaj mnie na tym urządzeniu
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-8">
+      <button type="cancel" class="btn">Anuluj</button>
+      <button type="submit" class="btn btn-primary">Zaloguj</button>
+    </div>
+  </div>
+</form>
+
+<!-- ------------------------------------------------------ -->

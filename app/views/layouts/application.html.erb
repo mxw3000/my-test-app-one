@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myfirstapp - Arena.pl Sp. z o.o.</title>
+  <%= favicon_link_tag "favicon.ico" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- -------------------------- header module :inline start ------------------------------ -->
+
+<br />
+<header id="header_group" class="site-header" role="contentinfo">
+	<%= render partial: "shared/b_navbar" %>
+	<%= render partial: "shared/a_header" %>
+	<%= render partial: "shared/c_banner" %>
+</footer> <!-- #header_group -->
+
+
+<!-- ------------------------- block module #876512.9 :start ----------------------------- -->
+
+<%= yield %>
+
+<!-- -------------------------- block module #876512.9 :end ------------------------------ -->
+
+<footer id="footer_group" class="site-footer" role="contentinfo">
+	<%= render partial: "shared/x_bigfooter" %>
+	<%= render partial: "shared/y_footer" %>
+	<%= render partial: "shared/z_copyrights" %>
+</footer> <!-- #footer_group -->
+
+<!-- --------------------------- footer module :inline end ------------------------------- -->
+
+</body>
+</html>
