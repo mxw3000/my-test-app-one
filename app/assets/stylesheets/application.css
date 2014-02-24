@@ -12,3 +12,37 @@
  *= require_tree .
  */
 
+body {
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+.well {
+	box-shadow: 2px 2px 8px gray !important;
+}
+
+.navbar {
+  margin-bottom: 24px !important;
+}
+
+.my_header {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my_header_img {
+}
+
+.my_footer {
+  text-align: left;
+  font-size: 12px;
+}
+
+.my_footer_text {
+  color: gray;
+}
+
+.my_footer_link a {
+	font-weight: bold;
+}

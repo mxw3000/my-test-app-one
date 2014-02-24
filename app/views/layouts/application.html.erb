@@ -5,20 +5,24 @@
   <title>Myfirstapp - Arena.pl Sp. z o.o.</title>
   <%= favicon_link_tag "favicon.ico" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<!-- ------------------------------------------------------------------------------------- -->
+
 <!-- -------------------------- header module :inline start ------------------------------ -->
 
-<br />
-<header id="header_group" class="site-header" role="contentinfo">
-	<%= render partial: "shared/b_navbar" %>
-	<%= render partial: "shared/a_header" %>
+<!-- <header id="header_group" class="site-header" role="contentinfo"> -->
+	<%= render partial: "shared/a_navbar" %>
+	<%= render partial: "shared/b_header" %>
 	<%= render partial: "shared/c_banner" %>
-</footer> <!-- #header_group -->
+<!-- ></header> <!-- #header_group -->
 
+<div class="container">
 
 <!-- ------------------------- block module #876512.9 :start ----------------------------- -->
 
@@ -33,6 +37,16 @@
 </footer> <!-- #footer_group -->
 
 <!-- --------------------------- footer module :inline end ------------------------------- -->
+
+</div><!-- /container -->
+
+<!-- ------------------------------------------------------------------------------------- -->
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
