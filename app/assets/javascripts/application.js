@@ -16,6 +16,6 @@
 //= require_tree .
 
 
-// myfirstapp mxw code:
+// myfirstapp code:
 // require bootstrap/js/bootstrap.js
 

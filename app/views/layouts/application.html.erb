@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Myfirstapp - Arena.pl Sp. z o.o.</title>
   <%= favicon_link_tag "favicon.ico" %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -14,17 +14,32 @@
 
 <!-- ------------------------------------------------------------------------------------- -->
 
+<!-- ----------------------------- info na temat cookies --------------------------------- -->
+
+<% if cookies[:cookie_warning]!="Accepted" %>
+<div id="cookie_warning" class="alert alert-warning alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Uwaga!</strong>
+  W ramach naszego serwisu stosujemy Cookies (ciasteczka) zapisywane na Twoim urządzeniu (komputerze, tablecie, komórce, smartfonie).
+  Więcej informacji na ten temat znajdziesz w naszej <a href="#" class="alert-link">Polityce prywatności</a>.
+  <button typ="button" class="btn btn-sm btn-warning" onclick="return close_cookie_warning();">
+    <span class="glyphicon glyphicon-ok-sign"></span>
+    Ok, rozumiem i akceptuję
+  </button>
+</div>
+<% end %>
+
 <!-- -------------------------- header module :inline start ------------------------------ -->
 
-<!-- <header id="header_group" class="site-header" role="contentinfo"> -->
+<header id="header_group" class="site-header" role="contentinfo">
 	<%= render partial: "shared/a_navbar" %>
 	<%= render partial: "shared/b_header" %>
 	<%= render partial: "shared/c_banner" %>
-<!-- ></header> <!-- #header_group -->
-
-<div class="container">
+</header> <!-- #header_group -->
 
 <!-- ------------------------- block module #876512.9 :start ----------------------------- -->
+
+<div class="container">
 
 <%= yield %>
 
@@ -42,11 +57,11 @@
 
 <!-- ------------------------------------------------------------------------------------- -->
 
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap core JavaScript                          -->
+<!-- ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

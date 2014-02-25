@@ -12,6 +12,13 @@ class HelloController < ApplicationController
 
     # -------------------------------------------------
 
+    # -- Development switches
+    @menu_mode  = 'static_top'  # wersja top-menu (manual override) :-)
+    @test_mode  = true          # dodatkowe opcje w top-menu
+    @debug_mode = !true         # lokalny tryb debugowania (dotyczy view)
+
+    # -------------------------------------------------
+
     @action= params[:id]
     @status= params[:stat]
     @time1 = Time.now
@@ -35,6 +42,10 @@ class HelloController < ApplicationController
     # head :not_found
 
     # -------------------------------------------------
+
+    # -- login logic --
+    @inputUserId_display   = "style=""display:none;"""
+    @inputUsername_display = "style=""display:block;"""
 
   end
 

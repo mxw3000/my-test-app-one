@@ -2,11 +2,11 @@
 <%
 # ####          Nagłówek i info wstępne            #### #
 
-# -- lokalny tryb debugowania
-full_debug_mode = !true
 %>
 
-<% if full_debug_mode %>
+<!-- ------------------------------------------------------ -->
+
+<% if @debug_mode %>
 <h1>Hello#index</h1>
 <p>
 	 <b>(dopisz w adresie <i>/action/:id</i> lub <i>?stat=X</i>, aby zobaczyć wynik GET poniżej)</b>
@@ -23,10 +23,9 @@ full_debug_mode = !true
 %>
 <% end %>
 
-
 <!-- ------------------------------------------------------ -->
 
-<% if full_debug_mode %>
+<% if @debug_mode %>
 <div class="well">
 	<h2>Zawartość tablicy {params}</h2>
 	<ul>
@@ -39,7 +38,20 @@ full_debug_mode = !true
 
 <!-- ------------------------------------------------------ -->
 
-<% if full_debug_mode %>
+<% if @debug_mode %>
+<div class="well">
+  <h2>Zawartość tablicy {cookies}</h2>
+  <ul>
+    <% for elem in cookies %>
+    <li><%= elem %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- ------------------------------------------------------ -->
+
+<% if @debug_mode %>
 <div class="well">
 	<h2>Zawartość tablicy {a}</h2>
 	<ul>
@@ -56,23 +68,23 @@ full_debug_mode = !true
 %>
 
 <form class="form-horizontal well" role="form">
-  <h2>Logowanie do serwisu</h2>
-  <div class="form-group">
+  <h2 class="my_page_title">Logowanie do serwisu</h2>
+  <div id="inputUserId-group" class="form-group" <%= @inputUserId_display %>>
     <label for="inputUserId" class="col-sm-4 control-label">Twój identyfikator:</label>
     <div class="col-sm-8">
         <div class="input-group-lg">
-        <!-- ><span class="input-group-addon">@</span> -->
-        <input type="tel" class="form-control" id="inputUserId" name="inputUserId" placeholder="Identyfikator" autofocus="autofocus">
+        <!-- <span class="input-group-addon">@</span> -->
+        <input type="tel" class="form-control" id="inputUserId" name="inputUserId" placeholder="Identyfikator" autofocus="autofocus" title="Identyfikator">
         <!-- <span class="input-group-addon">.com</span> -->
         </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputUsername" class="col-sm-4 control-label">Twój adres e-mail:</label>
+  <div id="inputEmail-group" class="form-group" <%= @inputUsername_display %>>
+    <label for="inputEmail" class="col-sm-4 control-label">Twój adres e-mail:</label>
     <div class="col-sm-8">
         <div class="input-group-lg">
-        <!-- ><span class="input-group-addon">@</span> -->
-        <input type="email" class="form-control" id="inputUsername" name="inputUsername" placeholder="Adres e-mail">
+        <!-- <span class="input-group-addon">@</span> -->
+        <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Adres e-mail" autofocus="autofocus">
         <!-- <span class="input-group-addon">.com</span> -->
         </div>
     </div>
@@ -82,6 +94,10 @@ full_debug_mode = !true
     <div class="col-sm-8 input-group-lg">
       <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Hasło">
     </div>
+  </div>
+  <div id="loginIdSwitch" class="col-sm-12">
+      <a href="#" class="btn btn-sm" onclick="return swich_login_input();">
+      <span  class="glyphicon glyphicon-retweet"></span> Zmień sposób logowania</a>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-4 col-sm-8">

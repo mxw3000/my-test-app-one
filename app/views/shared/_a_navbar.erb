@@ -3,13 +3,9 @@
 	# ####       Górne menu nawigacyjne (navbar)        ####
 	# ------------------------------------------------------
 
-	# -- wersja menu (manual override) :-)
-	menu_mode = 'static_top'
-
-	# ------------------------------------------------------
 %>
 
-<% if menu_mode=='static_top' %>
+<% if @menu_mode=='static_top' %>
 	<!-- static navbar -->
 	<div class="navbar navbar-default navbar-static-top" id="navbar_group" role="navigation">
 		<div class="container-fluid">
@@ -30,6 +26,19 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="small"><a href="#">mxw3000</a></li>
+					<% if @test_mode %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="info"><a href="#" onclick="return refresh_page();">Odśwież stronę</a></li>
+              <% if cookies[:cookie_warning]=="Accepted" %>
+              <li><a href="#" onclick="return delet_cookie_warning_cookie();">Usuń akceptację ciasteczek</a></li>
+              <% else %>
+              <li><a href="#" onclick="return close_cookie_warning();">Zaakceptuj akceptację ciasteczek</a></li>
+              <% end %>
+            </ul>
+          </li>
+          <% end %>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Moja Arena <b class="caret"></b></a>
 						<ul class="dropdown-menu">
