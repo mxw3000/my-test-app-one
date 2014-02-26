@@ -4,9 +4,13 @@ Myfirstapp::Application.routes.draw do
   get "hello/index"
   get "hello/welcome"
   get "hello/goodbye"
+  get "offers/new"
 
   # Zabawa w aplikację:
   get "action/:id", to: 'hello#index'
+
+  # Zabawa z oferty:
+  resources :offers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

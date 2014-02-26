@@ -6,7 +6,7 @@
 
 <!-- ------------------------------------------------------ -->
 
-<% if @debug_mode %>
+<% if ApplicationController.debug_mode %>
 <h1>Hello#index</h1>
 <p>
 	 <b>(dopisz w adresie <i>/action/:id</i> lub <i>?stat=X</i>, aby zobaczyć wynik GET poniżej)</b>
@@ -14,8 +14,8 @@
 <p>
 	Invoked action is: <b>'<%= @action %>'</b>,
 	param status is: <b>'<%= @status %>'</b><br/>
-	Current date is: <b><%= @time1.strftime('%A, %B %d, %Y') %></b>,
-	current time is: <b><%= @time1.strftime('%H:%M:%S') %></b><br/>
+	Current date is: <b><%= ApplicationController.time1.strftime('%A, %B %d, %Y') %></b>,
+	current time is: <b><%= ApplicationController.time1.strftime('%H:%M:%S') %></b><br/>
 	<% #Current seconds from <span style="color: #00ABA9;">1/1/1970</span> are: <%= @secs
 	%>
 </p>
@@ -25,7 +25,7 @@
 
 <!-- ------------------------------------------------------ -->
 
-<% if @debug_mode %>
+<% if ApplicationController.debug_mode %>
 <div class="well">
 	<h2>Zawartość tablicy {params}</h2>
 	<ul>
@@ -38,7 +38,7 @@
 
 <!-- ------------------------------------------------------ -->
 
-<% if @debug_mode %>
+<% if ApplicationController.debug_mode %>
 <div class="well">
   <h2>Zawartość tablicy {cookies}</h2>
   <ul>
@@ -51,7 +51,7 @@
 
 <!-- ------------------------------------------------------ -->
 
-<% if @debug_mode %>
+<% if ApplicationController.debug_mode %>
 <div class="well">
 	<h2>Zawartość tablicy {a}</h2>
 	<ul>
@@ -69,7 +69,7 @@
 
 <form class="form-horizontal well" role="form">
   <h2 class="my_page_title">Logowanie do serwisu</h2>
-  <div id="inputUserId-group" class="form-group" <%= @inputUserId_display %>>
+  <div id="inputUserId-group" class="form-group" style="<%= @inputUserId_display %>">
     <label for="inputUserId" class="col-sm-4 control-label">Twój identyfikator:</label>
     <div class="col-sm-8">
         <div class="input-group-lg">
@@ -79,7 +79,7 @@
         </div>
     </div>
   </div>
-  <div id="inputEmail-group" class="form-group" <%= @inputUsername_display %>>
+  <div id="inputEmail-group" class="form-group" style="<%= @inputEmail_display %>">
     <label for="inputEmail" class="col-sm-4 control-label">Twój adres e-mail:</label>
     <div class="col-sm-8">
         <div class="input-group-lg">

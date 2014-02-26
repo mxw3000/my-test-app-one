@@ -20,7 +20,8 @@ module Myfirstapp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-	print "Pozdrowienia planeto!"
+  # -- M. tu był
+	print "---------------------\nPozdrowienia planeto!\nAnd F* the World!\n---------------------\n"
 
   end
 end

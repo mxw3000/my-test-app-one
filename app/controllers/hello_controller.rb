@@ -12,19 +12,8 @@ class HelloController < ApplicationController
 
     # -------------------------------------------------
 
-    # -- Development switches
-    @menu_mode  = 'static_top'  # wersja top-menu (manual override) :-)
-    @test_mode  = true          # dodatkowe opcje w top-menu
-    @debug_mode = !true         # lokalny tryb debugowania (dotyczy view)
-
-    # -------------------------------------------------
-
-    @action= params[:id]
-    @status= params[:stat]
-    @time1 = Time.now
-    @secs  = @time1.strftime('%s')
-
-    @cyear = @time1.strftime('%Y')
+    @action = params[:id]
+    @status = params[:stat]
 
     # -------------------------------------------------
 
@@ -35,17 +24,17 @@ class HelloController < ApplicationController
     # render js: "alert('Hello Rails');", layout: true  # nie działa
     # render status: 500
     # render status: :forbidden
-
     # flash.now[:alert] = "Your book was not found"     # nie działa
-
     # head :bad_request
     # head :not_found
 
     # -------------------------------------------------
 
-    # -- login logic --
-    @inputUserId_display   = "style=""display:none;"""
-    @inputUsername_display = "style=""display:block;"""
+    # **** login logic ****
+
+    # -- email visible --
+    @inputUserId_display = "display:none;"
+    @inputEmail_display  = "display:block;"
 
   end
 

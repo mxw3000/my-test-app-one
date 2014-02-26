@@ -5,7 +5,7 @@
 
 %>
 
-<% if @menu_mode=='static_top' %>
+<% if ApplicationController.menu_mode=='static_top' %>
 	<!-- static navbar -->
 	<div class="navbar navbar-default navbar-static-top" id="navbar_group" role="navigation">
 		<div class="container-fluid">
@@ -26,17 +26,21 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="small"><a href="#">mxw3000</a></li>
-					<% if @test_mode %>
+					<% if ApplicationController.test_mode %>
           <li class="dropdown">
+            <% # ---------------------------------------------------------------------------------------------- %>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test <b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <li class="info"><%= link_to "Strona główna", "http://127.0.0.1:3000" %></li>
               <li class="info"><a href="#" onclick="return refresh_page();">Odśwież stronę</a></li>
               <% if cookies[:cookie_warning]=="Accepted" %>
               <li><a href="#" onclick="return delet_cookie_warning_cookie();">Usuń akceptację ciasteczek</a></li>
               <% else %>
               <li><a href="#" onclick="return close_cookie_warning();">Zaakceptuj akceptację ciasteczek</a></li>
               <% end %>
+              <li class="info"><%= link_to "Nowa oferta", offers_new_path %></li>
             </ul>
+            <% # ---------------------------------------------------------------------------------------------- %>
           </li>
           <% end %>
 					<li class="dropdown">

@@ -1,0 +1,29 @@
+<%
+  # ------------------------------------------------------
+  # ####        List templatete (Offers.index)        ####
+  # ------------------------------------------------------
+%>
+
+<div class="well">
+
+  <h2 class="my_page_title">Lista wszystkich ofert</h2>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+    </tr>
+
+    <% @offers.each do |offer| %>
+      <tr>
+        <td><%= offer.title %></td>
+        <td><%= offer.text %></td>
+        <td><%= link_to "zobacz szczegóły", offer %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <hr />
+  <%= link_to 'Dodaj nową ofertę', new_offer_path %>
+
+</div>

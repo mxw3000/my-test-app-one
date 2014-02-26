@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idx: 1
+  title: MyString
+  text: MyText
+  tbegin: 2014-02-26 16:06:04
+  tend: 2014-02-26 16:06:04
+  price: 9.99
+  otype: MyString
+  ostat: MyString
+  seller: MyString
+  vcount: 1
+  image: 
+
+two:
+  idx: 1
+  title: MyString
+  text: MyText
+  tbegin: 2014-02-26 16:06:04
+  tend: 2014-02-26 16:06:04
+  price: 9.99
+  otype: MyString
+  ostat: MyString
+  seller: MyString
+  vcount: 1
+  image: 
