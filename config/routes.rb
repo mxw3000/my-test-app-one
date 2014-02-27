@@ -12,6 +12,10 @@ Myfirstapp::Application.routes.draw do
   # Zabawa z oferty:
   resources :offers
 
+  resources :offers do
+    resources :comments
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -20,7 +20,7 @@ body {
 }
 
 .well {
-	box-shadow: 2px 2px 8px gray !important;
+  box-shadow: 2px 2px 8px gray !important;
 }
 
 .navbar {
@@ -64,6 +64,30 @@ body {
 #loginIdSwitch {
   text-align: right;
   margin: 0 0 16px 0;
+}
+
+#h2_list_count_info {
+	color: gray;
+	font-size: 22px;
+}
+
+#offer_text {
+	border: 1px solid #D9D9D9 !important;
+	padding: 4px 8px;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100px;
+	background: #E9E9E9;
+  	box-shadow: 1px 1px 4px gray !important;
+}
+/* -------------------------------------------------------------- */
+
+.field_with_errors input {
+  box-shadow: 2px 2px 8px red !important;
+}
+
+.field_with_errors textarea {
+  box-shadow: 2px 2px 8px red !important;
 }
 
 /* -------------------------------------------------------------- */

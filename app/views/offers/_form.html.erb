@@ -1,0 +1,79 @@
+<%
+  # ------------------------------------------------------
+  # ####           View templatete (Offers)           ####
+  # ------------------------------------------------------
+%>
+
+<%
+# -- konfiguracja formularza
+if pmode=="new" then
+  # -- tworzenie (new)
+  _title  = "Nowa oferta"
+  _url    = offers_path
+  _method = :post
+  _btntxt = "Dodaj ofertę"
+  _link   = link_to 'Anuluj', offers_path
+else
+  # -- edycja (edit)
+  _title  = "Edycja szczegółów oferty"
+  _url    = offer_path(@offer)
+  _method = :patch
+  _btntxt = "Zapisz zmiany"
+  _link   = link_to 'Anuluj', @offer
+end
+%>
+
+<div class="well">
+
+  <h2 class="my_page_title"><%= _title %></h2>
+
+  <%= form_for :offer, url: _url, method: _method do |f| %>
+    <% if @offer && @offer.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@offer.errors.count, "error") %> prohibited this post from being saved:</h3>
+      <ul>
+      <% @offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <p>
+      <%= f.label :title, "Nazwa/tytuł oferty" %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :text, "Opis oferty" %><br>
+      <%= f.text_area :text %>
+    </p>
+
+    <p>
+      <%= f.label :tbegin, "Początek emisji" %><br>
+      <%= f.date_field :tbegin %>
+    </p>
+
+    <p>
+      <%= f.label :tend, "Koniec emisji" %><br>
+      <%= f.date_field :tend %>
+    </p>
+
+    <p>
+      <%= f.label :price, "Cena \"Kup teraz\"" %><br>
+      <%= f.text_field :price %>
+    </p>
+
+    <p>
+      <%= f.label :seller, "Sprzedawca" %><br>
+      <%= f.text_field :seller %>
+    </p>
+
+    <p>
+      <%= f.submit _btntxt %>
+    </p>
+  <% end %>
+
+  <hr />
+  <%= _link %>
+
+</div>

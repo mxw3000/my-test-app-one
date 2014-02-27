@@ -8,17 +8,38 @@
 
   <h2 class="my_page_title">Szczegóły oferty</h2>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @offer.title %>
+  <h2><%= @offer.title %></h2>
+
+  <div id="offer_text" class="lead">
+    <%= simple_format( @offer.text ) %>
+  </div>
+
+  <p style="float: right;">
+    <%= link_to 'Usuń',
+          offer_path(@offer),
+          method: :delete,
+          data: { confirm: "Oferta zostanie trwale usunięta.\nCzy jesteś pewien, że chcesz ją usunąć?" } %>
   </p>
 
   <p>
-    <strong>Text:</strong>
-    <%= @offer.text %>
+    Cena: <strong><%= number_to_currency( @offer.price, unit: "zł", separator: ",", delimiter: " ", format: "%n %u" ) %></strong><br />
+    Sprzedawca: <strong><%= @offer.seller %></strong><br />
+    Początek emisji: <strong><%= @offer.tbegin.strftime('%A, %B %d, %Y, %H:%M:%S') %></strong><br />
+    Koniec emisji: <strong><%= @offer.tend.strftime('%A, %B %d, %Y, %H:%M:%S') %></strong><br />
+    Oferta utworzona: <strong><%= @offer.created_at.strftime('%A, %B %d, %Y, %H:%M:%S') %></strong><br />
+    Ostatnia edycja: <strong><%= @offer.updated_at.strftime('%A, %B %d, %Y, %H:%M:%S') %></strong><br />
+    Liczba wyświetleń: <strong><%= @offer.vcount %></strong><br />
   </p>
 
   <hr />
-  <%= link_to 'Powrót do listy wszystkich ofert', offers_path %>
+
+  <button type="button" class="btn" onclick="location='<%= edit_offer_path(@offer) %>';"><span class="glyphicon glyphicon-edit"></span> Edytuj</button>
+  <button type="button" class="btn btn-default btn-primary" onclick="location='<%= offers_path %>';"><span class="glyphicon glyphicon-list"></span> Powrót do listy wszystkich ofert</button>
+
+  <%
+    link_to "Edytuj", edit_offer_path(@offer)
+    link_to 'Usuń', offer_path(@offer), method: :delete, data: { confirm: 'Jesteś pewien?' }
+    link_to 'Powrót do listy wszystkich ofert', offers_path
+  %>
 
 </div>

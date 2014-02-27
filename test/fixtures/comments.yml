@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commenter: MyString
+  body: MyText
+  cdate: 2014-02-27 16:07:29
+  offer_id: 
+
+two:
+  commenter: MyString
+  body: MyText
+  cdate: 2014-02-27 16:07:29
+  offer_id: 

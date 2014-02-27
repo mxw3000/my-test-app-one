@@ -16,13 +16,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand" alt="Strona główna">Arena.pl</a>
+				<%= link_to "Arena.pl", root_url, class: "navbar-brand" %>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Ogłoszenia</a></li>
-					<li><a href="#">Kup teraz</a></li>
-					<li><a href="#">Sklepy</a></li>
+					<li><%= link_to "Ogłoszenia", offers_path %></li>
+					<li><%= link_to "Kup teraz", offers_path %></li>
+					<li><%= link_to "Sklepy", offers_path %></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="small"><a href="#">mxw3000</a></li>
